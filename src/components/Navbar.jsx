@@ -11,7 +11,9 @@ const Navbar = () => {
                     {/* Logo Section */}
                     <div className="flex items-center">
                         {/* <img src="/path-to-logo.png" alt="Library Logo" className="h-8 w-8 mr-2" /> */}
-                        <span className="text-white font-bold text-lg">Library Admin</span>
+                        <Link to={'/'}>
+                            <span className="text-white font-bold text-lg">Library Admin</span>
+                        </Link>
                     </div>
 
                     {/* Navigation Links */}
