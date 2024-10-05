@@ -1,31 +1,50 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <nav className="bg-gray-800">
+        <nav className="bg-gray-800 shadow">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-16">
+                    {/* Logo Section */}
                     <div className="flex items-center">
-                        <div className="text-white font-bold text-lg">Library Admin</div>
-                        <div className="hidden md:block">
-                            <div className="ml-10 flex items-baseline space-x-4">
-                                <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
-                                    Dashboard
-                                </a>
-                                <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
-                                    Books
-                                </a>
-                                <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
-                                    Students
-                                </a>
-                                <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
-                                    Profile
-                                </a>
-                            </div>
+                        {/* <img src="/path-to-logo.png" alt="Library Logo" className="h-8 w-8 mr-2" /> */}
+                        <span className="text-white font-bold text-lg">Library Admin</span>
+                    </div>
+
+                    {/* Navigation Links */}
+                    <div className="hidden md:block">
+                        <div className="ml-10 flex items-baseline space-x-4">
+                            <Link
+                                to="/"
+                                className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                            >
+                                Dashboard
+                            </Link>
+                            <Link
+                                to="/books"
+                                className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                            >
+                                Books
+                            </Link>
+                            <Link
+                                to="/students"
+                                className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                            >
+                                Students
+                            </Link>
+                            <Link
+                                to="/profile"
+                                className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                            >
+                                Profile
+                            </Link>
                         </div>
                     </div>
+
+                    {/* Mobile Menu Button */}
                     <div className="flex md:hidden">
                         <button
                             onClick={() => setIsOpen(!isOpen)}
@@ -50,22 +69,38 @@ const Navbar = () => {
                 </div>
             </div>
 
-            {/* Mobile menu */}
+            {/* Mobile Menu */}
             {isOpen && (
                 <div className="md:hidden">
                     <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                        <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                        <Link
+                            to="/"
+                            className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                            onClick={() => setIsOpen(false)}
+                        >
                             Dashboard
-                        </a>
-                        <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                        </Link>
+                        <Link
+                            to="/books"
+                            className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                            onClick={() => setIsOpen(false)}
+                        >
                             Books
-                        </a>
-                        <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                        </Link>
+                        <Link
+                            to="/students"
+                            className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                            onClick={() => setIsOpen(false)}
+                        >
                             Students
-                        </a>
-                        <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                        </Link>
+                        <Link
+                            to="/profile"
+                            className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                            onClick={() => setIsOpen(false)}
+                        >
                             Profile
-                        </a>
+                        </Link>
                     </div>
                 </div>
             )}
