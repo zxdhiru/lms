@@ -11,7 +11,7 @@ const Navbar = () => {
                     {/* Logo Section */}
                     <div className="flex items-center">
                         {/* <img src="/path-to-logo.png" alt="Library Logo" className="h-8 w-8 mr-2" /> */}
-                        <Link to={'/'}>
+                        <Link to={'/library-admin-panel'}>
                             <span className="text-white font-bold text-lg">Library Admin</span>
                         </Link>
                     </div>
@@ -20,25 +20,25 @@ const Navbar = () => {
                     <div className="hidden md:block">
                         <div className="ml-10 flex items-baseline space-x-4">
                             <Link
-                                to="/"
+                                to="/library-admin-panel"
                                 className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                             >
                                 Dashboard
                             </Link>
                             <Link
-                                to="/books"
+                                to="/library-admin-panel/books"
                                 className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                             >
                                 Books
                             </Link>
                             <Link
-                                to="/students"
+                                to="/library-admin-panel/students"
                                 className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                             >
                                 Students
                             </Link>
                             <Link
-                                to="/profile"
+                                to="/library-admin-panel/profile"
                                 className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                             >
                                 Profile
