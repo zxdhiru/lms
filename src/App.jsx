@@ -10,7 +10,6 @@ import BooksTable from './components/BooksTable';
 import StudentsTable from './components/StudentsTable';
 
 function App() {
-  const [count, setCount] = useState(0);
 
   return (
     <>
