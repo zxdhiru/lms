@@ -54,8 +54,8 @@ const Dashboard = () => {
                     <BooksTable />
                 )}
             </section>
+            {loading ? 'loading' : ''}
         </div>
     );
 };
-
 export default Dashboard;
